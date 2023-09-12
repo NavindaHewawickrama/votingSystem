@@ -32,6 +32,9 @@
             button2 = new Button();
             button3 = new Button();
             panel1 = new Panel();
+            button4 = new Button();
+            button5 = new Button();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -63,10 +66,37 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.AutoScroll = true;
+            panel1.AutoSize = true;
+            panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel1.BackColor = SystemColors.ControlDark;
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(button4);
             panel1.Location = new Point(3, 12);
+            panel1.MinimumSize = new Size(200, 400);
             panel1.Name = "panel1";
-            panel1.Size = new Size(124, 266);
+            panel1.Size = new Size(200, 400);
             panel1.TabIndex = 3;
+            panel1.Paint += panel1_Paint;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(42, 33);
+            button4.Name = "button4";
+            button4.Size = new Size(94, 29);
+            button4.TabIndex = 4;
+            button4.Text = "Home";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(42, 96);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 29);
+            button5.TabIndex = 5;
+            button5.Text = "Home";
+            button5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -79,7 +109,10 @@
             Controls.Add(button1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -88,5 +121,7 @@
         private Button button2;
         private Button button3;
         private Panel panel1;
+        private Button button5;
+        private Button button4;
     }
 }
